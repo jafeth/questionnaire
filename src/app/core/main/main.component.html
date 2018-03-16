@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Welcome to {{ title }}!</span>
+</mat-toolbar>
+<mat-sidenav-container class="main-container">
+  <mat-sidenav #sidenav mode="side" class="main-menu-container">
+    <app-menu></app-menu>
+  </mat-sidenav>
+  <mat-sidenav-content class="main-content-container">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

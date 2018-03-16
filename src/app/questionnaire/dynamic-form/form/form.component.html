@@ -1,0 +1,18 @@
+<div fxLayout="column" fxLayoutAlign="space-between none">
+  <form (ngSubmit)="submit()" [formGroup]="form" fxFlex="30">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngFor="let question of questions">
+          <qcm-form-field [question]="question" [form]="form"></qcm-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
+        <button mat-button type="button" (click)="reset()">Reset</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

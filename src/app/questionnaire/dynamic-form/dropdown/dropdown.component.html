@@ -1,0 +1,8 @@
+<mat-form-field class="qcm-field-full-width">
+  <mat-placeholder>{{question.label}}</mat-placeholder>
+  <mat-select [formControl]="control">
+    <mat-option *ngFor="let opt of question.options" [value]="opt.value">
+      {{opt.label}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

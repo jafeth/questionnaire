@@ -1,18 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ChoiceQuestion } from '../../models/choice-question';
 
 @Component({
   selector: 'qcm-choice',
   templateUrl: './choice.component.html',
-  styleUrls: ['./choice.component.css']
+  styleUrls: [ './choice.component.css' ]
 })
-export class ChoiceComponent implements OnInit {
-  @Input() question: ChoiceQuestion;
+export class ChoiceComponent {
+  @Input() question: ChoiceQuestion<any>;
   @Input() control: FormControl;
-  constructor() { }
 
-  ngOnInit() {
+  constructor() {
   }
-
 }

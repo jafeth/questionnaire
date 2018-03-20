@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../question.service';
+import { Survey } from '../models/survey';
 
 @Component({
   selector: 'qcm-questionnaire',
@@ -7,11 +8,11 @@ import { QuestionService } from '../question.service';
   styleUrls: [ './questionnaire.component.css' ]
 })
 export class QuestionnaireComponent implements OnInit {
-  questions: any[];
+  survey: Survey;
   payload = '';
 
   constructor(private service: QuestionService) {
-    this.questions = service.getQuestions();
+    this.survey = service.getSteppedSurvey();
   }
 
   ngOnInit() {

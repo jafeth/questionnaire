@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "qcm",
       "styles": [
+        "material.scss",
         "styles.css"
       ],
       "scripts": [],

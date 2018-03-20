@@ -1,0 +1,9 @@
+<mat-horizontal-stepper [formGroup]="form">
+  <mat-step *ngFor="let step of steps ; first as isFirst; last as isLast" [formGroup]="getStepForm(step)" [stepControl]="getStepForm(step)" label="{{step.label}}">
+    <qcm-form-field *ngFor="let question of step.questions" [question]="question" [form]="getStepForm(step)"></qcm-form-field>
+    <div>
+      <button [disabled]="isFirst" mat-button matStepperPrevious type="button">Back</button>
+      <button [disabled]="isLast" mat-button matStepperNext type="button">Next</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

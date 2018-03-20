@@ -1,0 +1,12 @@
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+$qcm-primary: mat-palette($mat-light-blue);
+$qcm-accent: mat-palette($mat-lime);
+
+$qcm-warn: mat-palette($mat-red);
+
+$qcm-theme: mat-dark-theme($qcm-primary, $qcm-accent,$qcm-warn);
+
+@include angular-material-theme($qcm-theme);

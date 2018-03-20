@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule, MatOptionModule, MatRadioModule,
   MatSelectModule,
-  MatSidenavModule,
+  MatSidenavModule, MatStepperModule,
   MatToolbarModule
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
@@ -30,7 +30,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatOptionModule,
     MatCardModule,
     FlexLayoutModule,
-    MatRadioModule
+    MatRadioModule,
+    MatStepperModule
   ]
 })
 export class SharedModule {

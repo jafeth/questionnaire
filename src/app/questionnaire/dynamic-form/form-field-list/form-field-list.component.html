@@ -1,0 +1,3 @@
+<div [formGroup]="control">
+  <qcm-form-field *ngFor="let question of list.questions" [question]="question" [form]="control"></qcm-form-field>
+</div>

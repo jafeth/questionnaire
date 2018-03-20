@@ -1,4 +1,7 @@
 <div [ngSwitch]="question.controlType">
   <qcm-textbox  *ngSwitchCase="'textbox'"  [control]="control" [question]="question"></qcm-textbox>
   <qcm-dropdown *ngSwitchCase="'dropdown'" [control]="control" [question]="question"></qcm-dropdown>
+  <qcm-choice *ngSwitchCase="'choice'" [control]="control" [question]="question"></qcm-choice>
+  <qcm-form-field-list *ngSwitchCase="'list'" [control]="control" [list]="question"></qcm-form-field-list>
+  <qcm-form-stepper *ngSwitchCase="'stepper'" [form]="control" [question]="question"></qcm-form-stepper>
 </div>

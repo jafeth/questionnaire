@@ -9,6 +9,8 @@ import { FormFieldComponent } from './dynamic-form/form-field/form-field.compone
 import { TextboxComponent } from './dynamic-form/textbox/textbox.component';
 import { DropdownComponent } from './dynamic-form/dropdown/dropdown.component';
 import { ChoiceComponent } from './dynamic-form/choice/choice.component';
+import { FormFieldListComponent } from './dynamic-form/form-field-list/form-field-list.component';
+import { FormStepperComponent } from './dynamic-form/form-stepper/form-stepper.component';
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { ChoiceComponent } from './dynamic-form/choice/choice.component';
     QuestionnaireComponent,
     TextboxComponent,
     DropdownComponent,
-    ChoiceComponent
+    ChoiceComponent,
+    FormFieldListComponent,
+    FormStepperComponent
   ],
   exports: [],
   providers: [ QuestionService ]

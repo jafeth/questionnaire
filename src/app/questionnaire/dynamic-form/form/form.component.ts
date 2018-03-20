@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { FormGroup } from '@angular/forms';
 import { QuestionControlService } from '../../question-control.service';
-import { QuestionBase } from '../../models/question-base';
+import { Survey } from '../../models/survey';
 
 @Component({
   selector: 'qcm-form',
@@ -11,16 +11,17 @@ import { QuestionBase } from '../../models/question-base';
   providers: [ QuestionControlService ]
 })
 export class FormComponent implements OnInit {
-  @Input() title: string;
-  @Input() questions: QuestionBase<any>[] = [];
+  @Input() survey: Survey;
   @Output() save = new EventEmitter<any>();
 
   form: FormGroup;
 
-  constructor(private qcs: QuestionControlService) {}
+  constructor(private qcs: QuestionControlService) {
+  }
 
   ngOnInit() {
-    this.form = this.qcs.toFormGroup(this.questions);
+    this.form = this.qcs.toFormGroup(this.survey.questions);
+    console.log(this.form);
   }
 
   submit() {
@@ -31,6 +32,9 @@ export class FormComponent implements OnInit {
     this.form.reset({});
   }
 
+  get questions() {
+    return this.survey.questions.sort(((a, b) => a.order - b.order));
+  }
 
 
 }

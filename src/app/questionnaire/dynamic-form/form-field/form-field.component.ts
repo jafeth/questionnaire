@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { FormGroup } from '@angular/forms';
 import { QuestionBase } from '../../models/question-base';
@@ -6,19 +6,18 @@ import { QuestionBase } from '../../models/question-base';
 @Component({
   selector: 'qcm-form-field',
   templateUrl: './form-field.component.html',
-  styleUrls: ['./form-field.component.css']
+  styleUrls: [ './form-field.component.css' ]
 })
-export class FormFieldComponent implements OnInit {
+export class FormFieldComponent {
 
   @Input() question: QuestionBase<any>;
   @Input() form: FormGroup;
 
-  constructor() {}
-
-  ngOnInit() {}
+  constructor() {
+  }
 
   get control() {
-    return this.form.controls[this.question.key];
+    return this.form.get(this.question.key);
   }
 
 }
